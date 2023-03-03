@@ -12,7 +12,18 @@ git log --pretty=online		精简日志版本输出信息
 git reset --hard HEAD~(100)	回退到前第100个版本
 git reflog				查看过往版本信息
 
+
 git checkout -- (file)		丢弃工作区的修改
 git reset HEAD (file)		撤销暂存区的提交，再用git checkout -- (file)命令丢弃工作区的修改
 git restore --staged (file)	与上条命令效果相同
+
+
+rm (file)				删除工作区的文件
+git rm (file)			删除工作区+暂存区的文件
+git commit -m"remove file"	提交删除
+git checkout -- file		用版本库里的版本替换工作区的版本
+1.如果用rm删除文件，那就相当于只删除了工作区的文件，如果想要恢复，直接用git checkout -- <file>就可以
+2.如果用git rm删除文件，那就相当于删除了文件，且将删除记录添加到了暂存区，如果想要恢复，需要先git reset HEAD <file>，然后再git checkout -- <file>
+3.如果想彻底把版本库的删除掉，先git rm，再git commit 就ok了
+
 
