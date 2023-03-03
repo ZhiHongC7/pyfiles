@@ -12,3 +12,7 @@ git log --pretty=online		精简日志版本输出信息
 git reset --hard HEAD~(100)	回退到前第100个版本
 git reflog				查看过往版本信息
 
+git checkout -- (file)		丢弃工作区的修改
+git reset HEAD (file)		撤销暂存区的提交，再用git checkout -- (file)命令丢弃工作区的修改
+
+
